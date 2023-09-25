@@ -42,7 +42,7 @@ const Analytics = () => {
         <Grid container spacing={3}>
           <Grid item lg={8} md={8} sm={12} xs={12}>
             <StatCards />
-            <TopSellingTable />
+            {/* <TopSellingTable /> */}
             <StatCards2 />
 
             <H4>Ongoing Projects</H4>
@@ -60,7 +60,7 @@ const Analytics = () => {
               />
             </Card>
 
-            <UpgradeCard />
+            {/* <UpgradeCard /> */}
             <Campaigns />
           </Grid>
         </Grid>

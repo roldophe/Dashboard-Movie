@@ -64,10 +64,10 @@ const TopSellingTable = () => {
   return (
     <Card elevation={3} sx={{ pt: '20px', mb: 3 }}>
       <CardHeader>
-        <Title>top selling products</Title>
+        <Title>Trending</Title>
         <Select size="small" defaultValue="this_month">
-          <MenuItem value="this_month">This Month</MenuItem>
-          <MenuItem value="last_month">Last Month</MenuItem>
+          <MenuItem value="this_month">Today</MenuItem>
+          <MenuItem value="last_month">This Week</MenuItem>
         </Select>
       </CardHeader>
 

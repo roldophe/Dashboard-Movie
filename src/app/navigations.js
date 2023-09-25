@@ -1,3 +1,4 @@
+import DataUsageIcon from '@mui/icons-material/DataUsage';
 export const navigations = [
   { name: 'Dashboard', path: '/dashboard/default', icon: 'dashboard' },
   { label: 'PAGES', type: 'label' },
@@ -32,6 +33,17 @@ export const navigations = [
       { name: 'Snackbar', path: '/material/snackbar', iconText: 'S' },
       { name: 'Table', path: '/material/table', iconText: 'T' }
     ]
+  },
+  {
+    name: 'DataTables',
+    icon: <DataUsageIcon fontSize='small'/>,
+    children: [
+      { name: 'Trending', path: '/datatables/trending', iconText: 'T' },
+      { name: 'Popular', path: '/datatables/popular', iconText: 'P' },
+      { name: 'Upcoming', path: '/datatables/upcoming', iconText: 'U' },
+      { name: 'Now Playing', path: '/datatables/nowplaying', iconText: 'N' },
+      { name: 'Tv Shows', path: '/datatables/ontv', iconText: 'T' }
+  ]
   },
   {
     name: 'Charts',

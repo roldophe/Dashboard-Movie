@@ -5,6 +5,7 @@ import { authRoles } from './auth/authRoles';
 import Loadable from './components/Loadable';
 import MatxLayout from './components/MatxLayout/MatxLayout';
 import materialRoutes from 'app/views/material-kit/MaterialRoutes';
+import DataTableRoutes from './views/datatables/DataTablesRountes';
 
 // session pages
 const NotFound = Loadable(lazy(() => import('app/views/sessions/NotFound')));
@@ -33,7 +34,8 @@ const routes = [
         element: <Analytics />,
         auth: authRoles.admin
       },
-
+      //datatables route
+      ...DataTableRoutes,
       // e-chart rooute
       {
         path: '/charts/echarts',

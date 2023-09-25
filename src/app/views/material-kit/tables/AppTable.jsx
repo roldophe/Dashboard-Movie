@@ -1,7 +1,7 @@
 import { Box, styled } from "@mui/material";
 import { Breadcrumb, SimpleCard } from "app/components";
-import PaginationTable from "./PaginationTable";
-import SimpleTable from "./SimpleTable";
+import SearchMovie from "./SearchMovie";
+import PopularMovies from "./PopularMovies";
 
 const Container = styled("div")(({ theme }) => ({
   margin: "30px",
@@ -16,16 +16,16 @@ const AppTable = () => {
   return (
     <Container>
       <Box className="breadcrumb">
-        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "Table" }]} />
+        <Breadcrumb routeSegments={[{ name: "Material", path: "/material" }, { name: "table" }]} />
       </Box>
-
-      <SimpleCard title="Simple Table">
-        <SimpleTable />
+      <SimpleCard title="Search Movie">
+        <SearchMovie />
+      </SimpleCard>
+      <SimpleCard title="Popular Movie">
+        <PopularMovies />
       </SimpleCard>
 
-      <SimpleCard title="Pagination Table">
-        <PaginationTable />
-      </SimpleCard>
+      
     </Container>
   );
 };

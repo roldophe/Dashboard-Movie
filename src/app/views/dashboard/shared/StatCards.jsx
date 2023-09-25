@@ -1,6 +1,7 @@
 import { Box, Card, Grid, Icon, IconButton, styled, Tooltip } from '@mui/material';
 import { Small } from 'app/components/Typography';
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexWrap: 'wrap',
@@ -29,22 +30,26 @@ const Heading = styled('h6')(({ theme }) => ({
 
 const StatCards = () => {
   const cardList = [
-    { name: 'New Leads', amount: 3050, icon: 'group' },
-    { name: 'This week Sales', amount: '$80,500', icon: 'attach_money' },
-    { name: 'Inventory Status', amount: '8.5% Stock Surplus', icon: 'store' },
-    { name: 'Orders to deliver', amount: '305 Orders', icon: 'shopping_cart' },
+    { name: 'Trending',nav: 'datatables/trending', total_results: '20000 Total Results',icon: 'trending_up'},
+    { name: `What's Popular`,nav: 'datatables/popular', total_results: '804222 Total Results', icon: 'whatshot' },
+    { name: 'Tv Shows',nav: 'datatables/ontv', total_results: '156168 Total Results', icon: 'tv' },
+    { name: 'Popular People',nav: 'material/people', total_results: '10000 Total Results', icon: 'people-alt' },
   ];
+  const navigate = useNavigate();
 
+  const handleItemClick = (route) => {
+      navigate(route);
+  };
   return (
     <Grid container spacing={3} sx={{ mb: '24px' }}>
       {cardList.map((item, index) => (
-        <Grid item xs={12} md={6} key={index}>
+        <Grid item xs={12} md={6} key={index} onClick={() => handleItemClick(`/${item.nav.toLowerCase()}`)}>
           <StyledCard elevation={6}>
             <ContentBox>
               <Icon className="icon">{item.icon}</Icon>
               <Box ml="12px">
                 <Small>{item.name}</Small>
-                <Heading>{item.amount}</Heading>
+                <Heading>{item.total_results}</Heading>
               </Box>
             </ContentBox>
 
