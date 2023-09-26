@@ -31,7 +31,7 @@ import { useEffect, useState } from "react";
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(20);
+    const [setRowsPerPage] = useState(20);
     const [totalPages, setTotalPages] = useState(0);
   
     useEffect(() => {
@@ -53,7 +53,7 @@ import { useEffect, useState } from "react";
       };
   
       fetchMovies();
-    }, [page]);
+    }, [page,movieType]);
   
     const handleChangePage = (event, newPage) => {
       setPage(newPage);

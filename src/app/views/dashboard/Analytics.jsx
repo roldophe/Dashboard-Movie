@@ -5,8 +5,9 @@ import DoughnutChart from './shared/Doughnut';
 import RowCards from './shared/RowCards';
 import StatCards from './shared/StatCards';
 import StatCards2 from './shared/StatCards2';
-import TopSellingTable from './shared/TopSellingTable';
 import UpgradeCard from './shared/UpgradeCard';
+import LineChart from '../charts/echarts/LineChart';
+import { SimpleCard } from 'app/components';
 
 const ContentBox = styled('div')(({ theme }) => ({
   margin: '30px',
@@ -35,7 +36,7 @@ const H4 = styled('h4')(({ theme }) => ({
 
 const Analytics = () => {
   const { palette } = useTheme();
-
+  const theme = useTheme();
   return (
     <Fragment>
       <ContentBox className="analytics">
@@ -43,8 +44,12 @@ const Analytics = () => {
           <Grid item lg={8} md={8} sm={12} xs={12}>
             <StatCards />
             {/* <TopSellingTable /> */}
+            
             <StatCards2 />
-
+            <LineChart
+              height="350px"
+              color={[theme.palette.primary.main, theme.palette.primary.light]}
+            />
             <H4>Ongoing Projects</H4>
             <RowCards />
           </Grid>
@@ -60,7 +65,7 @@ const Analytics = () => {
               />
             </Card>
 
-            {/* <UpgradeCard /> */}
+            <UpgradeCard />
             <Campaigns />
           </Grid>
         </Grid>
